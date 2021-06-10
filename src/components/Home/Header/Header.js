@@ -8,6 +8,7 @@ Form,
 FormControl,
 Button,
 Image } from 'react-bootstrap';
+import Cart from './Cart/Cart'
 
 export default function Header() {
     return (
@@ -23,12 +24,7 @@ export default function Header() {
                     <Image src="../../../assets/images/woman.png" roundedCircle />
                 </Nav.Link>
                 {/* Cart */}
-                <NavDropdown title="Cart" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-                </NavDropdown>
+               <Cart />
                 
                 </Nav>
                 {/* Search Bar */}
@@ -46,3 +42,4 @@ export default function Header() {
     </Aux>
     )
 }
+
