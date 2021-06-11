@@ -3,3 +3,4 @@ export const GET_PRODUCT_RECEIVE = "GET_PRODUCT_RECEIVE"; // STORE RES
 export const REVIEW_ITEM = "REVIEW_ITEM";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const INCREAMENT = "INCREAMENT"
+export const DECREASE = "DECREASE"

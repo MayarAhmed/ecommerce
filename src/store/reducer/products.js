@@ -24,18 +24,39 @@ import * as types from '../types/productInfo'
             const obj1 ={quantity:1};
             const obj2 =cartItemObj[0] ;
             const obj3 = Object.assign(obj2, obj1);
-            console.log('wegz',obj3)
              return  {
                 ...state,
              cart: state.cart.concat(obj3)
              }
           
            case types.INCREAMENT:
-          const increaseQuantityObj = state.data.filter(qObj => qObj.id == action.increasedItemId )
-           const qq = action.increasedItemId
+           const cartCopied = [...state.cart]
+          const increaseQuantityObj = state.data.filter(incObj => incObj.id == action.increasedItemId )
+           const itemInc ={...increaseQuantityObj}
+           let incCartCopied =itemInc[0].quantity + 1
+             let inc = cartCopied.map(i=>{
+                 if(i.id == action.increasedItemId){
+                   return  i.quantity = incCartCopied
+                 }
+             })
         return{
             ...state,
-            q:qq
+            cart:cartCopied
+        }
+
+            case types.DECREASE:
+           const cartCopiedDecrease = [...state.cart]
+          const decreseQuantityObj = state.data.filter(decObj => decObj.id == action.decreasedItemId )
+           const itemDec ={...decreseQuantityObj}
+           let decCartCopied =itemDec[0].quantity - 1
+             let decrease = cartCopiedDecrease.map(i=>{
+                 if(i.id == action.decreasedItemId && i.quantity >= 1 ){
+                   return  i.quantity = decCartCopied
+                 }
+             })
+        return{
+            ...state,
+            cart:cartCopiedDecrease
         }
           default:
          return state;

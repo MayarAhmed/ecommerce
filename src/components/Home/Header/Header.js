@@ -15,17 +15,16 @@ export default function Header() {
  <Aux>
         <Navbar bg="primary" expand="lg">
            
-                <Nav
+                <Nav 
                 className="mr-auto my-2 my-lg-0"
                 style={{ maxHeight: '100px' }}
                 navbarScroll
                 >
                 <Nav.Link href="#action1">
-                    <Image src="../../../assets/images/woman.png" roundedCircle />
+                    <img src="../../../assets/images/woman.png"  />
                 </Nav.Link>
                 {/* Cart */}
                <Cart />
-                
                 </Nav>
                 {/* Search Bar */}
                 <Form className="d-flex">
